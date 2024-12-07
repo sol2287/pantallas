@@ -1,0 +1,28 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Listar Caninos</title>
+</head>
+<body>
+    <h1>Lista de Caninos</h1>
+    <a href="{% url 'agregar_canino' %}">Agregar Nuevo Canino</a>
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Raza</th>
+            <th>Color</th>
+            <th>Edad</th>
+            <th>Fecha de Registro</th>
+        </tr>
+        {% for canino in caninos %}
+        <tr>
+            <td>{{ canino.nombre }}</td>
+            <td>{{ canino.raza }}</td>
+            <td>{{ canino.color }}</td>
+            <td>{{ canino.edad }}</td>
+            <td>{{ canino.fecha }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
